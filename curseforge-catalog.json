@@ -1,0 +1,17 @@
+{
+ "updated":"2026-10-26",
+ "projects":[
+  {"modId":"ftblibrary","id":404465,"slug":"ftb-library-forge","title":"FTB Library","category":"both","summary":"项目 Environment 标注 Client & Server，未单独说明两端的安装要求。"},
+  {"modId":"ftbteams","id":404468,"slug":"ftb-teams-forge","title":"FTB Teams","category":"both","summary":"项目 Environment 标注 Client & Server，未单独说明两端的安装要求。"},
+  {"modId":"ftbultimine","id":386134,"slug":"ftb-ultimine-forge","title":"FTB Ultimine","category":"both","summary":"项目 Environment 标注 Client & Server，未单独说明两端的安装要求。"},
+  {"modId":"framework","id":549225,"slug":"framework","title":"Framework","category":"both","summary":"项目 Environment 标注 Client & Server，未单独说明两端的安装要求。"},
+  {"modId":"connectivity","id":470193,"slug":"connectivity","title":"Connectivity","category":"both","summary":"项目标注双端，作者说明不要求两端同时安装，两端均有可用功能。"},
+  {"modId":"cupboard","id":326652,"slug":"cupboard","title":"Cupboard","category":"both","summary":"项目 Environment 标注 Client & Server，未单独说明两端的安装要求。"},
+  {"modId":"eatinganimation","id":570544,"slug":"eating-animation-forge","title":"Eating Animation [Neo/Forge]","category":"both","summary":"项目 Environment 标注 Client & Server；不是仅凭视觉效果就判为客户端专用。"},
+  {"modId":"damagetilt","id":411705,"slug":"damage-tilt","title":"Damage Tilt","category":"both","summary":"作者明确说明需要在服务端和客户端都安装；旧 1.8.9 客户端专用分支例外。","excludeVersions":["1.8.9"]},
+  {"modId":"ruins","id":227873,"slug":"ruins-structure-spawning-system","title":"Ruins","category":"both","summary":"项目 Environment 标注 Client & Server，未单独说明两端的安装要求。"},
+  {"modId":"fastbench","id":288885,"slug":"fastworkbench","title":"FastWorkbench","category":"unknown","summary":"项目未填写 Environment；仅识别项目，不据此猜测运行端。"},
+  {"modId":"fastsuite","id":475117,"slug":"fastsuite","title":"FastSuite","category":"unknown","summary":"项目未填写 Environment；仅识别项目，不据此猜测运行端。"},
+  {"modId":"armored_mobs","id":530490,"slug":"armored-mobs","title":"Armored Mobs","category":"unknown","summary":"项目未填写 Environment；仅识别项目，不据此猜测运行端。"}
+ ]
+}

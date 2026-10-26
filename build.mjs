@@ -1,0 +1,12 @@
+import {build} from 'esbuild';
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
+const worker=await build({entryPoints:['worker.js'],bundle:true,write:false,format:'iife',minify:true,legalComments:'inline',define:{global:'globalThis'}});
+const app=await build({entryPoints:['app.js'],bundle:true,write:false,format:'iife',minify:true,legalComments:'inline',define:{WORKER_SOURCE:JSON.stringify(worker.outputFiles[0].text)}});
+const licenses=['fflate','@iarna/toml'].map(name=>name+'\n'+readFileSync('node_modules/'+name+'/LICENSE','utf8')).join('\n\n');
+writeFileSync('THIRD-PARTY-LICENSES.txt',licenses);
+const html=readFileSync('template.html','utf8').replace('/*STYLE*/',()=>readFileSync('style.css','utf8')).replace('/*APP*/',()=>app.outputFiles[0].text.replace(/<\/script/gi,'<\\/script'))+'\n<!-- Third-party licenses\n'+licenses.replaceAll('--','—')+'\n-->\n';
+mkdirSync('dist',{recursive:true});writeFileSync('dist/index.html',html);
+mkdirSync('dist/server',{recursive:true});mkdirSync('dist/.openai',{recursive:true});
+await build({entryPoints:['server-worker.js'],bundle:true,format:'esm',minify:true,outfile:'dist/server/index.js',define:{HTML_SOURCE:JSON.stringify(html)}});
+writeFileSync('dist/.openai/hosting.json',existsSync('.openai/hosting.json')?readFileSync('.openai/hosting.json'):'{"d1":null,"r2":null}');
+console.log('已生成独立 HTML：'+(Buffer.byteLength(html)/1024).toFixed(1)+' KB');

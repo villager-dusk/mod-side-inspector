@@ -1,0 +1,1 @@
+{"private":true,"type":"module","dependencies":{"fflate":"0.8.2","@iarna/toml":"2.2.5"},"devDependencies":{"esbuild":"0.25.12","playwright":"1.56.1"}}
